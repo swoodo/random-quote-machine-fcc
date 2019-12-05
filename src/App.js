@@ -66,7 +66,7 @@ class App extends Component {
 
   tweetClick = (e) => {
     let link = e.target.parentNode;
-    link.setAttribute('href', "http://www.twitter.com/intent/tweet" + "?text=" + this.state.quote);
+    link.setAttribute('href', "http://www.twitter.com/intent/tweet" + "?text=" + "\"" + this.state.quote + "\" - Homer Simpson");
     console.log(e.target.parentNode);
   }
 
