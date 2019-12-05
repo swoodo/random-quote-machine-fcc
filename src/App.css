@@ -1,0 +1,234 @@
+:root {
+  --bg-color-1: #659FD5;
+  --footer-color: #404358;
+}
+
+@font-face {
+  font-family: Akbar;
+  src: url(fonts/akbar.ttf);
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Opera and Firefox */
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: var(--bg-color-1);
+  font-family: sans-serif;
+}
+
+body,
+button {
+  -webkit-transition: background-color 500ms;
+  -moz-transition: background-color 500ms;
+  -o-transition: background-color 500ms;
+  transition: background-color 500ms;
+}
+
+#author,
+#footer {
+  -webkit-transition: color 500ms;
+  -moz-transition: color 500ms;
+  -o-transition: color 500ms;
+  transition: color 500ms;
+}
+
+.quote-text {
+  -webkit-transition: opacity 500ms;
+  -moz-transition: opacity 500ms;
+  -o-transition: opacity 500ms;
+  transition: opacity 500ms;
+}
+
+#quote-box {
+  -webkit-transition: flex 0.3s ease-out;
+  -moz-transition: flex 0.3s ease-out;
+  -o-transition: flex 0.3s ease-out;
+  transition: flex 0.3s ease-out;
+}
+
+.container {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 8rem);
+}
+/***********
+QUOTE BOX
+***********/
+#quote-box {
+  position: relative;
+  background-color: white;
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2rem;
+  flex: 1;
+}
+
+#quote-box::before {
+  content: '';
+  position: absolute;
+  bottom: -1rem;
+  left: 3rem;
+  width: 0; 
+  height: 0; 
+  border-left: 4rem solid transparent;
+  border-right: 0rem solid transparent;
+  
+  border-top: 2rem solid white;
+}
+
+@media (min-width: 440px) {
+  #quote-box::before {
+    left: 8rem;
+  }
+}
+
+.quote-symbol {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  max-width: 50px;
+  fill: var(--bg-color-1);
+}
+
+#text {
+  flex: 0 0 100%;
+  align-self: center;
+  color: var(--footer-color);
+}
+
+#text > p {
+  padding-top: 3rem;
+  text-align: center;
+  font-size: 1rem;
+}
+
+#author {
+  flex: 0 0 100%;
+  align-self: center;
+  text-align: center;
+
+  padding: 1.5rem 0 1.5rem 0;
+  font-size: 0.8rem;
+  color: var(--bg-color-1);
+}
+
+@media (min-width: 380px) {
+  #author {
+    text-align: right;
+  }
+  #author > p {
+    font-size: 1rem;
+    padding-right: 2.5rem;
+  }
+  #text > p {
+    font-size: 1.2rem;
+    text-align: justify;
+    padding: 3rem 2.5rem 0 2.5rem;
+  }
+}
+
+
+#tweet-quote {
+  flex: 0 0 50%;
+  align-self: center;
+  text-align: left;
+}
+
+#new-quote {
+  flex: 0 0 50%;
+  align-self: center;
+  justify-self: end;
+  text-align: right;
+}
+
+@media (min-width: 380px) {
+  #new-quote,
+  #tweet-quote {
+    flex: 0 0 calc(50% - 2rem);
+  }
+
+  #new-quote {
+    padding-right: 2rem;
+  }
+
+  #tweet-quote {
+    padding-left: 2rem;
+  }
+}
+
+/***********
+BUTTONS
+***********/
+button {
+  outline: none;
+  border: none;
+  padding: 0.75rem;
+  border-radius: 5px;
+  font-family: 'Akbar';
+  color: white;
+  text-transform: uppercase;
+  background: var(--bg-color-1);
+  font-size: 0.8rem;
+}
+
+button:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+@media (min-width: 380px) {
+  button {
+    font-size: 1rem;
+  }
+}
+
+/***********
+FOOTER
+***********/
+
+footer{
+  position: relative;
+  width: 100%;
+  background-color: var(--footer-color);
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  font-size: 1rem;
+  min-height: 8rem;
+  color: var(--bg-color-1);
+}
+
+.footer-content {
+  padding-bottom: 1.5rem;
+  font-family: 'Akbar';
+  text-transform: uppercase;
+  opacity: 0.2;
+}
+
+.footer-image {
+  position: absolute;
+  margin: 0 auto;
+  max-width: 150px;
+  top: -165%;
+}
