@@ -50,7 +50,6 @@ class App extends Component {
       buttons[i].style.backgroundColor = randomBg;
     }
     //text transition
-    document.getElementById('author').style.color = randomBg;
     document.querySelector('.quote-symbol').style.fill = randomBg;
 
     let newQuote = this.newQuote();
