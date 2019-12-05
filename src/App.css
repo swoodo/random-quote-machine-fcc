@@ -2,13 +2,11 @@
   --bg-color-1: #659FD5;
   --footer-color: #404358;
   --footer-height: 2rem;
-  --push-height: 278px;
 }
 
 @media (min-width: 380px) {
   :root {
     --footer-height: 8rem;
-    --push-height: 0px;
   }
 }
 
@@ -78,21 +76,29 @@ button {
   }
 }
 
+.content-container {
+  display: flex;
+  height: 100vh;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
 .content {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  height: calc(100vh - var(--footer-height) - 0.5rem - var(--push-height));
   margin-top: 0.5rem;
+  flex: 1 1 100%;
 }
 
 @media (min-width: 380px) {
   .content {
     align-items: center;
     margin-top: 0;
-    height: calc(100vh - var(--footer-height));
   }
 }
+
 
 /***********
 QUOTE BOX
@@ -100,13 +106,13 @@ QUOTE BOX
 #quote-box {
   position: relative;
   background-color: white;
-  width: 90%;
+
   height: auto;
   border-radius: 20px;
   display: flex;
   flex-wrap: wrap;
   padding: 2rem;
-  flex: 1;
+  flex: 1 1 100%;
 }
 
 
@@ -114,6 +120,7 @@ QUOTE BOX
 #quote-box::before {
   content: '';
   position: absolute;
+ 
   bottom: -1rem;
   left: 3rem;
   width: 0; 
@@ -175,7 +182,6 @@ QUOTE BOX
   }
 }
 
-
 #tweet-quote {
   flex: 0 0 50%;
   align-self: center;
@@ -216,7 +222,7 @@ button {
   color: white;
   text-transform: uppercase;
   background: var(--bg-color-1);
-  font-size: 0.8rem;
+  font-size: 0.7rem;
 }
 
 button:hover {
@@ -224,7 +230,7 @@ button:hover {
   opacity: 0.8;
 }
 
-@media (min-width: 380px) {
+@media (min-width: 420px) {
   button {
     font-size: 1rem;
   }
@@ -233,36 +239,30 @@ button:hover {
 /***********
 FOOTER
 ***********/
-.push {
-  display: block;
-  min-height: var(--push-height);
-}
-
 footer{
-  position: relative;
   width: 100%;
-  background-color: var(--footer-color);
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 1rem;
-  min-height: var(--footer-height);
-  color: var(--bg-color-1);
+  color: white;
 }
 
 .footer-content {
-  padding-bottom: 0;
   font-family: 'Akbar';
   text-transform: uppercase;
   text-align: center;
-  opacity: 0.2;
+  font-size: 0.8rem;
+  opacity: 0.5;
+  margin-top: 1rem;
 }
 
 .footer-image {
-  position: absolute;
-  margin: 0 auto;
+  position: relative;
   max-width: 150px;
-  top: -272px;
+  flex: 1 1 100%;
+  align-self: end;
+  margin-top: 1rem;
 }
 
 @media (min-width: 380px) {

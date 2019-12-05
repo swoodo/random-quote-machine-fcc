@@ -42,7 +42,6 @@ class App extends Component {
     }
     //text transition
     document.getElementById('author').style.color = randomBg;
-    document.querySelector('footer').style.color = randomBg;
     document.querySelector('.quote-symbol').style.fill = randomBg;
 
     let newQuote = this.newQuote();
@@ -75,8 +74,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <div className="content container">
-          <div id="quote-box">
+        <div className="container content-container">
+          <div className="content">
+            <div id="quote-box">
             <svg className="quote-symbol noselect">
               <path d="M20.7,26.1c0,2.4-1.3,3.6-4,3.6c-1.8,0-5-3.7-9.7-11C2.4,11.4,0.1,6.6,0,4.2
               C-0.1,1.5,0.9,0.1,2.9,0c1-0.1,2.4,0.8,4,2.6c1.2,1.3,3.2,4.5,6.2,9.6c1.8,3,3.9,6.5,6.2,10.5C20.1,24.1,20.6,25.2,20.7,26.1z
@@ -92,15 +92,15 @@ class App extends Component {
               <button className="btn" onClick={this.quoteClick}>New Quote</button>
             </div>
           </div>
+            <img src={homer1} alt="Homer Simpson" className="footer-image noselect" onClick={this.homerClick} />
+            <footer>
+              <div className="footer-content container noselect">
+                by swoodo
+              </div>
+            </footer>
+          </div>
           
         </div>
-        <div className="push"></div>
-        <footer>
-          <img src={homer1} alt="Homer Simpson" className="footer-image noselect" onClick={this.homerClick} />
-          <div className="footer-content container noselect">
-            by swoodo
-          </div>
-        </footer>
       </div>
     );
   }
