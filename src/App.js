@@ -129,11 +129,7 @@ class App extends Component {
           </div>
           <div className="footer-image">
             <div id="quote-box-triangle"></div>
-<<<<<<< HEAD
             <img src={homer1} alt="Homer Simpson" className="noselect footer-image-img" onClick={this.homerClick} />
-=======
-            <img src={homer1} alt="Homer Simpson" className="noselect" onClick={this.homerClick} />
->>>>>>> b84538b366c98bf01f581bff9b4de7b034679243
           </div>
             <footer>
               <div className="footer-content container noselect">
