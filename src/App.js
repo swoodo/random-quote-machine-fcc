@@ -11,6 +11,7 @@ class App extends Component {
       quote: this.newQuote()
     })
   }
+  
   state = {
     bgColor: '#659FD5',
     quoteIndex: 0,
@@ -18,6 +19,7 @@ class App extends Component {
     quote: '',
     bgStyle: ''
   }
+
   homerClick = () => {
     let homer = document.querySelector('.footer-image-img');
     homer.src = homer3;
