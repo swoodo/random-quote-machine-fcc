@@ -113,6 +113,7 @@ QUOTE BOX
   flex-wrap: wrap;
   padding: 2rem;
   flex: 1 1 100%;
+  margin-top: 1rem;
 }
 
 
@@ -255,6 +256,7 @@ footer{
   font-size: 0.8rem;
   opacity: 0.5;
   margin-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .footer-image {
@@ -263,16 +265,4 @@ footer{
   flex: 1 1 100%;
   align-self: end;
   margin-top: 1rem;
-}
-
-@media (min-width: 380px) {
-  footer{
-    align-items: flex-end;
-  }
-  .footer-content {
-    padding-bottom: 1.5rem;
-  }
-  .footer-image {
-    top: -165%;
-  }
 }
