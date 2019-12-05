@@ -137,8 +137,6 @@ QUOTE BOX
   display: block;
   width: 100%;
   max-width: 640px;
-  height: 100%;
-  min-height: 480px;
   background: white;
   background-size: cover; 
   z-index: 0;
