@@ -64,6 +64,12 @@ class App extends Component {
     }) 
   }
 
+  tweetClick = (e) => {
+    let link = e.target.parentNode;
+    link.setAttribute('href', "http://www.twitter.com/intent/tweet" + "?text=" + this.state.quote);
+    console.log(e.target.parentNode);
+  }
+
   newQuote() {
     //quote text show
     let randomNum = Math.floor((Math.random() * homerQuotes.length));
@@ -85,9 +91,9 @@ class App extends Component {
             </svg>
             <div id="text"><p className="quote-text">{this.state.quote}</p></div>
             <div id="author"><p>- Homer Jay Simpson</p></div>
-            <div id="tweet-quote">
+            <a id="tweet-quote" href="http://www.twitter.com/intent/tweet" onClick={this.tweetClick} target="_blank">
               <button className="btn">Tweet</button>
-            </div>
+            </a>
             <div id="new-quote">
               <button className="btn" onClick={this.quoteClick}>New Quote</button>
             </div>
