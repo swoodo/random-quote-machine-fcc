@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "df57b3a54edf681f910c8a6589c60cbf",
+    "revision": "bfa51b32a798b4da1565af7acd1d8c32",
     "url": "/random-quote-machine-fcc/index.html"
   },
   {
-    "revision": "dd16d76a600628c84f47",
+    "revision": "98aeaa5584d79cb3d582",
     "url": "/random-quote-machine-fcc/static/css/main.1bf59b9c.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/random-quote-machine-fcc/static/js/2.c86e4d28.chunk.js"
   },
   {
-    "revision": "dd16d76a600628c84f47",
-    "url": "/random-quote-machine-fcc/static/js/main.5f082dc5.chunk.js"
+    "revision": "98aeaa5584d79cb3d582",
+    "url": "/random-quote-machine-fcc/static/js/main.165ba674.chunk.js"
   },
   {
     "revision": "9a8de1045e3e28e993e0",
@@ -32,7 +32,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/random-quote-machine-fcc/static/media/homer-2.b2d4d33e.svg"
   },
   {
-    "revision": "ddb14a217233ba0fcad246a5a7b02c76",
-    "url": "/random-quote-machine-fcc/static/media/homer-3.ddb14a21.svg"
+    "revision": "66162d19ae875c058aa7c0fa6226b7e0",
+    "url": "/random-quote-machine-fcc/static/media/homer-3.66162d19.svg"
   }
 ]);
