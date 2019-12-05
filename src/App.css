@@ -192,7 +192,7 @@ QUOTE BOX
 
   padding: 1.5rem 0 1.5rem 0;
   font-size: 0.8rem;
-  color: var(--bg-color-1);
+  color: var(--footer-color);
 }
 
 @media (min-width: 380px) {
