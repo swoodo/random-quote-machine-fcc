@@ -1,6 +1,15 @@
 :root {
   --bg-color-1: #659FD5;
   --footer-color: #404358;
+  --footer-height: 2rem;
+  --push-height: 278px;
+}
+
+@media (min-width: 380px) {
+  :root {
+    --footer-height: 8rem;
+    --push-height: 0px;
+  }
 }
 
 @font-face {
@@ -59,23 +68,39 @@ button {
 }
 
 .container {
-  max-width: 500px;
+  width: calc(100% - 1rem);
   margin: 0 auto;
+}
+
+@media (min-width: 380px) {
+  .container {
+    max-width: 500px;
+  }
 }
 
 .content {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: calc(100vh - 8rem);
+  height: calc(100vh - var(--footer-height) - 0.5rem - var(--push-height));
+  margin-top: 0.5rem;
 }
+
+@media (min-width: 380px) {
+  .content {
+    align-items: center;
+    margin-top: 0;
+    height: calc(100vh - var(--footer-height));
+  }
+}
+
 /***********
 QUOTE BOX
 ***********/
 #quote-box {
   position: relative;
   background-color: white;
-  width: 100%;
+  width: 90%;
   height: auto;
   border-radius: 20px;
   display: flex;
@@ -83,6 +108,8 @@ QUOTE BOX
   padding: 2rem;
   flex: 1;
 }
+
+
 
 #quote-box::before {
   content: '';
@@ -206,6 +233,10 @@ button:hover {
 /***********
 FOOTER
 ***********/
+.push {
+  display: block;
+  min-height: var(--push-height);
+}
 
 footer{
   position: relative;
@@ -213,16 +244,17 @@ footer{
   background-color: var(--footer-color);
   display: flex;
   justify-content: center;
-  align-items: flex-end;
+  align-items: center;
   font-size: 1rem;
-  min-height: 8rem;
+  min-height: var(--footer-height);
   color: var(--bg-color-1);
 }
 
 .footer-content {
-  padding-bottom: 1.5rem;
+  padding-bottom: 0;
   font-family: 'Akbar';
   text-transform: uppercase;
+  text-align: center;
   opacity: 0.2;
 }
 
@@ -230,5 +262,17 @@ footer{
   position: absolute;
   margin: 0 auto;
   max-width: 150px;
-  top: -165%;
+  top: -272px;
+}
+
+@media (min-width: 380px) {
+  footer{
+    align-items: flex-end;
+  }
+  .footer-content {
+    padding-bottom: 1.5rem;
+  }
+  .footer-image {
+    top: -165%;
+  }
 }

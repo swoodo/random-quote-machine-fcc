@@ -65,6 +65,13 @@ class App extends Component {
     }) 
   }
 
+  newQuote() {
+    //quote text show
+    let randomNum = Math.floor((Math.random() * homerQuotes.length));
+
+    return(homerQuotes[randomNum]['quote'])
+  }
+
   render() {
     return (
       <div className="App">
@@ -85,8 +92,9 @@ class App extends Component {
               <button className="btn" onClick={this.quoteClick}>New Quote</button>
             </div>
           </div>
+          
         </div>
-        
+        <div className="push"></div>
         <footer>
           <img src={homer1} alt="Homer Simpson" className="footer-image noselect" onClick={this.homerClick} />
           <div className="footer-content container noselect">
@@ -95,13 +103,6 @@ class App extends Component {
         </footer>
       </div>
     );
-  }
-
-  newQuote() {
-    //quote text show
-    let randomNum = Math.floor((Math.random() * homerQuotes.length));
-
-    return(homerQuotes[randomNum]['quote'])
   }
 }
 
