@@ -8,7 +8,9 @@ import './App.css';
 class App extends Component {
   state = {
     bgColor: '#659FD5',
-    quote: this.newQuote()
+    quoteIndex: 0,
+    quotesUsed: [],
+    quote: this.newQuote('init')
   }
 
   homerClick = () => {
@@ -45,11 +47,7 @@ class App extends Component {
     document.querySelector('.quote-symbol').style.fill = randomBg;
 
     let newQuote = this.newQuote();
-
-    while (this.state.quote === newQuote) {
-      newQuote = this.newQuote();
-    }
-
+    
     document.body.style.pointerEvents = 'none';
     setTimeout(function() {
       document.querySelector('.quote-text').style.display= 'block';
@@ -66,15 +64,42 @@ class App extends Component {
 
   tweetClick = (e) => {
     let link = e.target.parentNode;
-    link.setAttribute('href', "http://www.twitter.com/intent/tweet" + "?text=" + "\"" + this.state.quote + "\" - Homer Simpson");
-    console.log(e.target.parentNode);
+    link.setAttribute('href', `http://www.twitter.com/intent/tweet?text=\"${this.state.quote}\" -Homer Simpson`);
   }
 
   newQuote() {
     //quote text show
     let randomNum = Math.floor((Math.random() * homerQuotes.length));
+    let arr = [];
+    
+    if (arguments[0] !== 'init') {
+      arr = this.state.quotesUsed.slice();
+      if (this.state.quotesUsed.length === 0) {
+        let index = 0;
+        for (let i = 0; i < homerQuotes.length; i++) {
+          if (homerQuotes[i]["quote"] === this.state.quote) {
+            index = i;
+          }
+        }
+        arr.push(index);
+      }
+      if (this.state.quotesUsed.length === homerQuotes.length - 1) {
+        arr = [];
+      }
+      while (this.state.quotesUsed.indexOf(randomNum) >= 0) {
+        randomNum = Math.floor((Math.random() * homerQuotes.length));
+      }
+    }
+    
+    arr.push(randomNum);
 
-    return(homerQuotes[randomNum]['quote'])
+    this.setState({
+      quoteIndex: randomNum,
+      quotesUsed: arr
+    });
+
+    return(homerQuotes[randomNum]['quote']);
+    
   }
 
   render() {
@@ -91,7 +116,7 @@ class App extends Component {
             </svg>
             <div id="text"><p className="quote-text">{this.state.quote}</p></div>
             <div id="author"><p>- Homer Jay Simpson</p></div>
-            <a id="tweet-quote" href="http://www.twitter.com/intent/tweet" onClick={this.tweetClick} target="_blank">
+            <a id="tweet-quote" href="http://www.twitter.com/intent/tweet" onClick={this.tweetClick} target="_blank" rel="noopener noreferrer" >
               <button className="btn">Tweet</button>
             </a>
             <div id="new-quote">
