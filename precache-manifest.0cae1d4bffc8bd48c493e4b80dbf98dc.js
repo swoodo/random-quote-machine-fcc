@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "bfa51b32a798b4da1565af7acd1d8c32",
+    "revision": "e9c2396e4a78523dd231c28a8a794380",
     "url": "/random-quote-machine-fcc/index.html"
   },
   {
-    "revision": "98aeaa5584d79cb3d582",
+    "revision": "155dae099fd0e77255d5",
     "url": "/random-quote-machine-fcc/static/css/main.1bf59b9c.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/random-quote-machine-fcc/static/js/2.c86e4d28.chunk.js"
   },
   {
-    "revision": "98aeaa5584d79cb3d582",
-    "url": "/random-quote-machine-fcc/static/js/main.165ba674.chunk.js"
+    "revision": "155dae099fd0e77255d5",
+    "url": "/random-quote-machine-fcc/static/js/main.a1d8f32d.chunk.js"
   },
   {
     "revision": "9a8de1045e3e28e993e0",
