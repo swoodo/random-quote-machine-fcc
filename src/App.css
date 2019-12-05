@@ -112,17 +112,16 @@ QUOTE BOX
   flex-wrap: wrap;
   padding: 2rem;
   flex: 1 1 100%;
-  
+  overflow: hidden;
 }
 
 
 
-#quote-box::before {
+#quote-box-triangle{
   content: '';
   position: absolute;
- 
-  bottom: -1rem;
-  left: 3rem;
+  top: 0;
+  left: -1.5rem;
   width: 0; 
   height: 0; 
   border-left: 4rem solid transparent;
@@ -131,10 +130,22 @@ QUOTE BOX
   border-top: 2rem solid white;
 }
 
+.quote-box-image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+  width: 100%;
+  max-width: 640px;
+  height: 100%;
+  min-height: 480px;
+  background: white;
+  background-size: cover; 
+  z-index: 0;
+  opacity: 0.2;
+}
+
 @media (min-width: 440px) {
-  #quote-box::before {
-    left: 8rem;
-  }
 }
 
 .quote-symbol {
@@ -146,9 +157,11 @@ QUOTE BOX
 }
 
 #text {
+  position: relative;
   flex: 0 0 100%;
   align-self: center;
   color: var(--footer-color);
+  z-index: 1;
 }
 
 #text > p {
@@ -158,6 +171,8 @@ QUOTE BOX
 }
 
 #author {
+  position: relative;
+  z-index: 1;
   flex: 0 0 100%;
   align-self: center;
   text-align: center;
@@ -232,7 +247,6 @@ button {
 
 button:hover {
   cursor: pointer;
-  opacity: 0.8;
 }
 
 button:active {
@@ -274,6 +288,10 @@ footer{
   position: relative;
   max-width: 150px;
   flex: 1 1 100%;
-  align-self: end;
-  margin-top: 1rem;
+  align-self: start;
+
+}
+
+.footer-image > img {
+  padding-top: 1rem;
 }

@@ -6,13 +6,18 @@ import homerQuotes from './quotes.json';
 import './App.css';
 
 class App extends Component {
+  componentDidMount() {
+    this.setState({
+      quote: this.newQuote()
+    })
+  }
   state = {
     bgColor: '#659FD5',
     quoteIndex: 0,
     quotesUsed: [],
-    quote: this.newQuote('init')
+    quote: '',
+    bgStyle: ''
   }
-
   homerClick = () => {
     let homer = document.querySelector('.footer-image');
     homer.src = homer3;
@@ -72,43 +77,45 @@ class App extends Component {
     let randomNum = Math.floor((Math.random() * homerQuotes.length));
     let arr = [];
     
-    if (arguments[0] !== 'init') {
-      arr = this.state.quotesUsed.slice();
-      if (this.state.quotesUsed.length === 0) {
-        let index = 0;
-        for (let i = 0; i < homerQuotes.length; i++) {
-          if (homerQuotes[i]["quote"] === this.state.quote) {
-            index = i;
-            break;
-          }
-        }
-        arr.push(index);
-      }
-      if (this.state.quotesUsed.length === homerQuotes.length - 1) {
-        arr = [];
-      }
-      while (this.state.quotesUsed.indexOf(randomNum) >= 0) {
-        randomNum = Math.floor((Math.random() * homerQuotes.length));
-      }
+    
+    arr = this.state.quotesUsed.slice();
+
+    if (this.state.quotesUsed.length === homerQuotes.length - 1) {
+      arr = [];
     }
+    while (this.state.quotesUsed.indexOf(randomNum) >= 0) {
+      randomNum = Math.floor((Math.random() * homerQuotes.length));
+    }
+  
     
     arr.push(randomNum);
+    let bgImg = homerQuotes[randomNum]["image"];
+    let bgImgStr = 'linear-gradient(0deg, #ffffff, #ffffff, transparent), url('+bgImg+') no-repeat center';
+
+    document.querySelector('.quote-box-image').style.background=bgImgStr;
 
     this.setState({
       quoteIndex: randomNum,
-      quotesUsed: arr
+      quotesUsed: arr,
+      bgStyle: bgImgStr
     });
+    
+    
 
     return(homerQuotes[randomNum]['quote']);
     
   }
 
+  
+
   render() {
+
     return (
       <div className="App">
         <div className="container content-container">
           <div className="content">
             <div id="quote-box">
+              <div class="quote-box-image"></div>
             <svg className="quote-symbol noselect">
               <path d="M20.7,26.1c0,2.4-1.3,3.6-4,3.6c-1.8,0-5-3.7-9.7-11C2.4,11.4,0.1,6.6,0,4.2
               C-0.1,1.5,0.9,0.1,2.9,0c1-0.1,2.4,0.8,4,2.6c1.2,1.3,3.2,4.5,6.2,9.6c1.8,3,3.9,6.5,6.2,10.5C20.1,24.1,20.6,25.2,20.7,26.1z
@@ -123,8 +130,12 @@ class App extends Component {
             <div id="new-quote">
               <button className="btn" onClick={this.quoteClick}>New Quote</button>
             </div>
+            
           </div>
-            <img src={homer1} alt="Homer Simpson" className="footer-image noselect" onClick={this.homerClick} />
+          <div className="footer-image">
+            <div id="quote-box-triangle"></div>
+            <img src={homer1} alt="Homer Simpson" className="noselect" onClick={this.homerClick} />
+          </div>
             <footer>
               <div className="footer-content container noselect">
                 by swoodo
