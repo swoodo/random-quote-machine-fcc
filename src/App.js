@@ -76,16 +76,30 @@ class App extends Component {
     //quote text show
     let randomNum = Math.floor((Math.random() * homerQuotes.length));
     let arr = [];
+<<<<<<< HEAD
 
+=======
+    
+    
+>>>>>>> b84538b366c98bf01f581bff9b4de7b034679243
     arr = this.state.quotesUsed.slice();
 
     if (this.state.quotesUsed.length === homerQuotes.length - 1) {
       arr = [];
+<<<<<<< HEAD
     }
     while (this.state.quotesUsed.indexOf(randomNum) >= 0) {
       randomNum = Math.floor((Math.random() * homerQuotes.length));
     }
   
+=======
+    }
+    while (this.state.quotesUsed.indexOf(randomNum) >= 0) {
+      randomNum = Math.floor((Math.random() * homerQuotes.length));
+    }
+  
+    
+>>>>>>> b84538b366c98bf01f581bff9b4de7b034679243
     arr.push(randomNum);
     let bgImg = homerQuotes[randomNum]["image"];
     let bgImgStr = 'linear-gradient(0deg, #ffffff, #ffffff, transparent), url('+bgImg+') no-repeat center';
@@ -98,6 +112,11 @@ class App extends Component {
       bgStyle: bgImgStr
     });
     
+<<<<<<< HEAD
+=======
+    
+
+>>>>>>> b84538b366c98bf01f581bff9b4de7b034679243
     return(homerQuotes[randomNum]['quote']);
     
   }
@@ -130,7 +149,11 @@ class App extends Component {
           </div>
           <div className="footer-image">
             <div id="quote-box-triangle"></div>
+<<<<<<< HEAD
             <img src={homer1} alt="Homer Simpson" className="noselect footer-image-img" onClick={this.homerClick} />
+=======
+            <img src={homer1} alt="Homer Simpson" className="noselect" onClick={this.homerClick} />
+>>>>>>> b84538b366c98bf01f581bff9b4de7b034679243
           </div>
             <footer>
               <div className="footer-content container noselect">

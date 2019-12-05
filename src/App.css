@@ -145,6 +145,21 @@ QUOTE BOX
   opacity: 0.2;
 }
 
+.quote-box-image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+  width: 100%;
+  max-width: 640px;
+  height: 100%;
+  min-height: 480px;
+  background: white;
+  background-size: cover; 
+  z-index: 0;
+  opacity: 0.2;
+}
+
 @media (min-width: 440px) {
 }
 
