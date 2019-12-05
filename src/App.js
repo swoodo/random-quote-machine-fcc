@@ -79,6 +79,7 @@ class App extends Component {
         for (let i = 0; i < homerQuotes.length; i++) {
           if (homerQuotes[i]["quote"] === this.state.quote) {
             index = i;
+            break;
           }
         }
         arr.push(index);
