@@ -95,7 +95,6 @@ button {
 @media (min-width: 380px) {
   .content {
     align-items: center;
-    margin-top: 0;
   }
 }
 
@@ -113,7 +112,7 @@ QUOTE BOX
   flex-wrap: wrap;
   padding: 2rem;
   flex: 1 1 100%;
-  margin-top: 1rem;
+  
 }
 
 
