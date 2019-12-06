@@ -3,7 +3,7 @@ import homer1 from './images/homer-1.svg';
 import homer2 from './images/homer-2.svg';
 import homer3 from './images/homer-3.svg';
 import homerQuotes from './quotes.json';
-import spinner from './images/spinner.gif';
+import spinner from './images/spinner.svg';
 import './App.css';
 
 class App extends Component {
